@@ -1,7 +1,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include </home/josedavid/new_newCpp/FreeBSDCalculator/FreeBSD-CLI-Calculator-main/Calc.hh>
+#include <cctype>
+#include </home/josedavid/new_newCpp/FreeBSDCalculator/FreeBSD-CLI-Calculator/Calc.hh>
 
 using namespace std;
 
@@ -11,7 +12,8 @@ int main()
     vector<char> operatorr;
     vector<calc> segmentos;
     string SEntrada;
-
+    short e = 0;
+    
     cout << "Ingrese op: \n";
     getline(cin, SEntrada);
 
@@ -24,9 +26,20 @@ int main()
             operatorr.push_back(entrada[i]);
         }
         else {
-            segmentos[i].setOperador(operatorr);
-            segmentos[i].setID(i++);
+            segmentos.push_back(calc(e++,operatorr));
             operatorr.clear();
+        }
+    }
+
+    for(short i = 0; i < segmentos.size(); i++){
+        if(segmentos[i].getOp()[i] == '+' || segmentos[i].getOp()[i] == '-' && segmentos[i].getOp().size() == 1){
+            segmentos[i].validOp();
+        }
+        else if(isdigit(segmentos[i].getOp()[i] && segmentos[i].getOPValid() != true)){
+            segmentos[i].validation();
+        }
+        else if(!(isdigit(segmentos[i].getOp()[i]))){
+        
         }
     }
 
