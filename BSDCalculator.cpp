@@ -1,34 +1,14 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <string>
+#include </home/josedavid/new_newCpp/FreeBSDCalculator/FreeBSD-CLI-Calculator-main/Calc.hh>
 
 using namespace std;
-
-class calc
-{
-protected:
-    vector<char> operador;
-    int id;
-public:
-    calc(){
-        id = 0;
-    }
-    calc(int id1, vector<char> entrada1){
-        id = id1;
-        operador = entrada1;
-    }
-    int getId(){
-        return id;
-    }
-    vector<char> getOp(){
-        return operador;
-    }
-};
 
 int main()
 {
     vector<char> entrada;
+    vector<char> operatorr;
     vector<calc> segmentos;
     string SEntrada;
 
@@ -39,8 +19,15 @@ int main()
         entrada.push_back(SEntrada[i]);
     }
     
-    for (short i = 0; condition; inc-expression) {
-    
+    for (short i = 0; i < entrada.size(); i++) {
+        if(entrada[i] != ' '){
+            operatorr.push_back(entrada[i]);
+        }
+        else {
+            segmentos[i].setOperador(operatorr);
+            segmentos[i].setID(i++);
+            operatorr.clear();
+        }
     }
 
     return 0;
