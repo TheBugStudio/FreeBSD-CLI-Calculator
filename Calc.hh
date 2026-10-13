@@ -48,4 +48,8 @@ public:
         valid = true;
         isOp = true;
     }
+    void invalidation(){
+        valid = false;
+        isOp = false;
+    }
 };
